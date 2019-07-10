@@ -79,6 +79,7 @@ public class Application {
     public Application() {
         try {
             String pathtoexe = System.getProperty("user.dir");
+            System.out.println("Userv dir... " + pathtoexe);
             File net = new File(pathtoexe, "cnn-model.data");
             restored = ModelSerializer.restoreMultiLayerNetwork(net);
         } catch (IOException ex) {
@@ -172,8 +173,8 @@ public class Application {
         displayImage(result);
     }
      
-    public static int getIntFromImage(String imagePath) throws Exception {
-       Application app = new Application();
+    public static int getIntFromImage(String imagePath, Application app) throws Exception {
+       // Application app = new Application();
         StringBuffer resultNumber = new StringBuffer(); // Gathering resulted numbers.
         IplImage image = cvLoadImage(imagePath, 0);
        // Mat mat2 = new Mat (  addss );
